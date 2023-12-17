@@ -1,0 +1,68 @@
+.composition {
+  position: relative;
+
+  @include responsive(portrait-tablet) {
+    text-align: center;
+  }
+
+  &__picture {
+    width: 60%;
+    position: absolute;
+    box-shadow: $shadow-lg-dark;
+    transition: all 0.3s;
+    outline: 1.5rem solid transparent;
+    outline-offset: 2rem;
+    z-index: 50;
+
+    @include responsive(portrait-tablet) {
+      position: relative;
+      width: 32%;
+      box-shadow: $shadow-lg;
+    }
+    
+    &--pic1 {
+      left: 0;
+      top: -2rem;
+
+      @include responsive(portrait-tablet) {
+        top: 0;
+        left: 2rem;
+      }
+
+    }
+    &--pic2 {
+      right: 0;
+      top: 2rem;
+
+      @include responsive(portrait-tablet) {
+        top: -1rem;
+        z-index: 100;
+      }
+    }
+
+    &--pic3 {
+      left: 20%;
+      top: 10rem;
+
+      @include responsive(portrait-tablet) {
+        top: 0;
+        left: -2rem;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-0.3rem);
+      box-shadow: $shadow-xl-dark;
+      z-index: 200;
+      outline: 1.5rem solid $color-primary;
+
+      @include responsive(portrait-tablet) {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &:hover &__picture:not(:hover) {
+    transform: scale(0.95);
+  } 
+}

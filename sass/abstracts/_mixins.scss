@@ -1,0 +1,24 @@
+@mixin center-H-V {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width : 37.5em) { @content };   //600px
+  }
+
+  @if $breakpoint == portrait-tablet {
+    @media (max-width : 56.25em) { @content };  //900px
+  }
+
+  @if $breakpoint == landscape-tablet {
+    @media (max-width : 84.375em) { @content };     //1350px
+  }
+
+  @if $breakpoint == large-desktop {
+    @media (min-width : 112.5em) { @content };  //1800px
+  }
+}

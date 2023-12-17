@@ -1,0 +1,34 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include responsive(landscape-tablet) {
+    font-size: 56.25%;
+  }
+  @include responsive(portrait-tablet) {
+    font-size: 50%;
+  }
+  @include responsive(large-desktop) {
+    font-size: 75%;
+  }
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 3rem;
+
+  @include responsive(landscape-tablet) {
+    padding: 0;
+  }
+
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
